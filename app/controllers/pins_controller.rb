@@ -43,7 +43,7 @@ class PinsController < ApplicationController
   # PATCH/PUT /pins/1
   # PATCH/PUT /pins/1.json
   def update
-    if @pin.update(pin_params)
+    respond_to do |format|
       if @pin.update(pin_params)
         format.html { redirect_to @pin, notice: 'Pin was successfully updated.' }
         format.json { render :show, status: :ok, location: @pin }
